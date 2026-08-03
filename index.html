@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Garcia — Game &amp; Web Developer</title>
+<meta name="description" content="Portfolio of Felipe Garcia, a hybrid game and web developer. Shipped games, live products, and the code behind both.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="wordmark">Felipe Garcia<span class="wordmark-dot">.</span></a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#learning">Learning</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <span class="version-tag">PORTFOLIO&nbsp;// v3.2</span>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+      <p class="eyebrow">Hybrid developer — games &amp; web</p>
+      <h1 class="hero-title">
+        I build worlds you can <em>play</em>,<br>
+        and products people <em>use</em>.
+      </h1>
+      <p class="hook">
+        Four shipped games. Six live web products. One recurring habit: taking a system
+        apart until I understand exactly why it's fun, or why it's fast — then shipping it.
+        Below are three builds with the full case study: the constraint, the decision, the result.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <ul class="contact-chips" aria-label="Contact information">
+        <li>
+          <svg viewBox="0 0 24 24" class="chip-icon" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <a href="mailto:felipegarciadev@outlook.com">felipegarciadev@outlook.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" class="chip-icon" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <a href="https://github.com/felipegarcia10" target="_blank" rel="noopener">github.com/felipegarcia10</a>
+        </li>
+        <li>
+            <svg viewBox="0 0 24 24" class="chip-icon" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M3 12h18M12 3c2.8 2.6 4.2 5.7 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.7-4.2-9s1.4-6.4 4.2-9z" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+            <a href="https://www.linkedin.com/in/juan-felipe-garcia-martinez-salesforce/" target="_blank" rel="noopener">linkedin.com/juan-felipe-garcia-martinez</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero-console" aria-hidden="true">
+      <div class="console-bar">
+        <span class="console-dot"></span><span class="console-dot"></span><span class="console-dot"></span>
+        <span class="console-title">status.log</span>
+      </div>
+      <div class="console-body" id="console-body">
+        <p><span class="prompt">&gt;</span> loading portfolio<span class="dots">...</span></p>
+        <p><span class="prompt">&gt;</span> GAMES_SHIPPED&nbsp;&nbsp;<span class="value">04</span></p>
+        <p><span class="prompt">&gt;</span> PRODUCTS_LIVE&nbsp;&nbsp;<span class="value">06</span></p>
+        <p><span class="prompt">&gt;</span> STACK&nbsp;&nbsp;<span class="value">Godot · Unity · React · Node</span></p>
+        <p><span class="prompt">&gt;</span> CURRENTLY&nbsp;&nbsp;<span class="value">available for freelance + FT roles</span></p>
+        <p class="cursor-line"><span class="prompt">&gt;</span><span class="cursor"></span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="work" id="work">
+  <div class="section-head">
+    <p class="eyebrow">Selected builds</p>
+    <h2>Three shipped projects, start to finish</h2>
+    <p class="section-lede">Each entry below is a real case study: the problem, the constraint I was working under, the decisions I made, and how it landed. Replace the mock copy, media, and links with your own.</p>
+  </div>
+
+  <!-- PROJECT 01 -->
+  <article class="project" id="project-rootbound">
+    <div class="project-head">
+      <div class="project-title-row">
+        <span class="build-tag">BUILD // 01</span>
+        <span class="status-badge status-shipped">Shipped</span>
+      </div>
+      <h3>Rootbound</h3>
+      <p class="project-tagline">A narrative puzzle-platformer about a forest that remembers what you do to it.</p>
+      <dl class="project-meta">
+        <div><dt>Role</dt><dd>Solo developer &amp; designer</dd></div>
+        <div><dt>Stack</dt><dd>Godot 4, GDScript, Aseprite</dd></div>
+        <div><dt>Platform</dt><dd>Windows, macOS, Web (itch.io)</dd></div>
+        <div><dt>Timeline</dt><dd>7 months, 2025</dd></div>
+      </dl>
+      <div class="project-links">
+        <a href="https://yourusername.itch.io/rootbound" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+          Play on itch.io
+        </a>
+        <a href="https://github.com/felipegarcia10/rootbound" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          View source on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-media" role="group" aria-label="Rootbound screenshots and clips">
+      <button class="media-slot media-tall" data-caption="Rootbound — the overgrown atrium, act two.">
+        <span class="media-kind">IMAGE</span>
+        <span class="media-hint">/assets/rootbound/screenshot-01.jpg</span>
+      </button>
+      <button class="media-slot" data-caption="Root-growth puzzle mechanic, looped capture.">
+        <span class="media-kind">GIF</span>
+        <span class="media-hint">/assets/rootbound/growth-loop.gif</span>
+      </button>
+      <button class="media-slot" data-caption="Full traversal sequence, act one boss.">
+        <span class="media-kind">VIDEO</span>
+        <span class="media-hint">/assets/rootbound/boss-clip.mp4</span>
+      </button>
+      <button class="media-slot" data-caption="Concept art vs. final render comparison.">
+        <span class="media-kind">IMAGE</span>
+        <span class="media-hint">/assets/rootbound/concept-compare.jpg</span>
+      </button>
+    </div>
+
+    <div class="project-case">
+      <div class="case-block">
+        <h4>The problem</h4>
+        <p>Puzzle-platformers usually treat the environment as static scenery you solve <em>around</em>. I wanted the environment itself to be the puzzle's memory — a level that visibly changes shape based on the player's past choices, without ever showing a menu, a meter, or a save-state indicator.</p>
+      </div>
+      <div class="case-block">
+        <h4>The decision</h4>
+        <p>I built a lightweight "growth graph" underneath the tilemap: every root the player grows is a node with a timestamp and a parent. Instead of scripting bespoke triggers per room, rooms just query the graph and render themselves accordingly. That one decision let 14 hand-built rooms react to player history with about 400 lines of logic, not 4,000.</p>
+      </div>
+      <div class="case-block">
+        <h4>The result</h4>
+        <p>Rootbound shipped to itch.io and crossed 3,200 downloads in its first month, with a 91% positive rating across 140+ ratings. Two separate outlets covered it in "puzzle games with quiet storytelling" round-ups. Replace this paragraph with your own real numbers once you have them.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 02 -->
+  <article class="project" id="project-driftwatch">
+    <div class="project-head">
+      <div class="project-title-row">
+        <span class="build-tag">BUILD // 02</span>
+        <span class="status-badge status-shipped">Shipped</span>
+      </div>
+      <h3>Driftwatch</h3>
+      <p class="project-tagline">A real-time marine weather dashboard for small-boat sailors, built to work on a phone in direct sun.</p>
+      <dl class="project-meta">
+        <div><dt>Role</dt><dd>Full-stack developer</dd></div>
+        <div><dt>Stack</dt><dd>React, Node.js, WebSockets, NOAA buoy API</dd></div>
+        <div><dt>Platform</dt><dd>Web (responsive), installable PWA</dd></div>
+        <div><dt>Timeline</dt><dd>3 months, 2024</dd></div>
+      </dl>
+      <div class="project-links">
+        <a href="https://driftwatch.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+          View live site
+        </a>
+        <a href="https://github.com/felipegarcia10/driftwatch" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          View source on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-media" role="group" aria-label="Driftwatch screenshots and clips">
+      <button class="media-slot media-tall" data-caption="Driftwatch dashboard, live buoy overlay.">
+        <span class="media-kind">IMAGE</span>
+        <span class="media-hint">/assets/driftwatch/dashboard.jpg</span>
+      </button>
+      <button class="media-slot" data-caption="Live data updating over WebSocket, looped capture.">
+        <span class="media-kind">GIF</span>
+        <span class="media-hint">/assets/driftwatch/live-update.gif</span>
+      </button>
+      <button class="media-slot" data-caption="Mobile layout walkthrough.">
+        <span class="media-kind">VIDEO</span>
+        <span class="media-hint">/assets/driftwatch/mobile-walkthrough.mp4</span>
+      </button>
+      <button class="media-slot" data-caption="High-glare mode, designed for direct sunlight.">
+        <span class="media-kind">IMAGE</span>
+        <span class="media-hint">/assets/driftwatch/glare-mode.jpg</span>
+      </button>
+    </div>
+
+    <div class="project-case">
+      <div class="case-block">
+        <h4>The problem</h4>
+        <p>Existing marine forecast sites were built for desktop, buried the numbers sailors actually need (gust speed, swell period) under decorative charts, and were unreadable outdoors. A local sailing club asked for something that worked one-handed, on a cracked phone screen, in full sun.</p>
+      </div>
+      <div class="case-block">
+        <h4>The decision</h4>
+        <p>I stripped the UI to five numbers and one directional compass, streamed updates over a WebSocket instead of polling, and built a genuine high-contrast mode — not just a dark theme — tuned against a phone held outside at noon. The whole interaction model fits on one screen with no scrolling.</p>
+      </div>
+      <div class="case-block">
+        <h4>The result</h4>
+        <p>Adopted by two sailing clubs as their default pre-launch check. Around 400 weekly active users during sailing season, with sub-second update latency from buoy to screen. Swap in your real usage numbers and any testimonials once you have them.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 03 -->
+  <article class="project" id="project-nightshade">
+    <div class="project-head">
+      <div class="project-title-row">
+        <span class="build-tag">BUILD // 03</span>
+        <span class="status-badge status-indev">In development</span>
+      </div>
+      <h3>Nightshade Arcade</h3>
+      <p class="project-tagline">A browser-based, four-player local-object party game — think a haunted board game night, playable from any laptop.</p>
+      <dl class="project-meta">
+        <div><dt>Role</dt><dd>Gameplay programmer &amp; network architecture</dd></div>
+        <div><dt>Stack</dt><dd>Phaser 3, TypeScript, Socket.IO, Redis</dd></div>
+        <div><dt>Platform</dt><dd>Web (desktop &amp; tablet)</dd></div>
+        <div><dt>Timeline</dt><dd>Ongoing since early 2026</dd></div>
+      </dl>
+      <div class="project-links">
+        <a href="https://yourusername.itch.io/nightshade-arcade" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+          Play the demo on itch.io
+        </a>
+        <a href="https://github.com/felipegarcia10/nightshade-arcade" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          View source on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="project-media" role="group" aria-label="Nightshade Arcade screenshots and clips">
+      <button class="media-slot media-tall" data-caption="Nightshade Arcade, four-player lobby screen.">
+        <span class="media-kind">IMAGE</span>
+        <span class="media-hint">/assets/nightshade/lobby.jpg</span>
+      </button>
+      <button class="media-slot" data-caption="Card-reveal mechanic, looped capture.">
+        <span class="media-kind">GIF</span>
+        <span class="media-hint">/assets/nightshade/card-reveal.gif</span>
+      </button>
+      <button class="media-slot" data-caption="Full round playtest with commentary.">
+        <span class="media-kind">VIDEO</span>
+        <span class="media-hint">/assets/nightshade/playtest-round.mp4</span>
+      </button>
+      <button class="media-slot" data-caption="Network architecture diagram, client-authority split.">
+        <span class="media-kind">IMAGE</span>
+        <span class="media-hint">/assets/nightshade/netcode-diagram.jpg</span>
+      </button>
+    </div>
+
+    <div class="project-case">
+      <div class="case-block">
+        <h4>The problem</h4>
+        <p>Local multiplayer party games usually require everyone to own the same console. I wanted the same couch-energy with zero install: one host opens a link, everyone else scans a code with whatever device is in their pocket.</p>
+      </div>
+      <div class="case-block">
+        <h4>The decision</h4>
+        <p>Phones act as controllers only — no rendering, no state — while the host browser tab owns the authoritative game state and renders the shared screen. That split keeps phone-side code trivial and puts all the interesting netcode problems (reconnects, latency compensation, out-of-order input) in one place I can actually test.</p>
+      </div>
+      <div class="case-block">
+        <h4>The result</h4>
+        <p>Currently in closed playtesting with three local game nights and one online playtest group. Public demo and full release timeline coming soon — update this section as milestones land.</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="experience" id="experience">
+  <div class="section-head">
+    <p class="eyebrow">Career log</p>
+    <h2>Where I've worked</h2>
+  </div>
+
+  <ol class="timeline">
+    <li class="timeline-entry">
+      <div class="timeline-meta">
+        <span class="timeline-date">2024 — Present</span>
+      </div>
+      <div class="timeline-content">
+        <h3>Gameplay Programmer <span class="timeline-org">— Palefire Studios</span></h3>
+        <p>Own combat and traversal systems for an unannounced 3D action title in Unreal Engine 5. Built the studio's ability-scripting tool used by three designers with no engineering background, cutting new-ability turnaround from days to hours.</p>
+        <ul class="timeline-tags">
+          <li>Unreal Engine 5</li><li>C++</li><li>Gameplay Ability System</li><li>Tooling</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="timeline-entry">
+      <div class="timeline-meta">
+        <span class="timeline-date">2022 — 2024</span>
+      </div>
+      <div class="timeline-content">
+        <h3>Freelance Web Developer <span class="timeline-org">— Self-employed</span></h3>
+        <p>Delivered 11 client projects end to end: marketing sites, a booking system for a climbing gym, and Driftwatch. Handled scoping, design handoff, and deployment directly with clients, most of whom had never worked with a developer before.</p>
+        <ul class="timeline-tags">
+          <li>React</li><li>Node.js</li><li>Client management</li><li>Deployment</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="timeline-entry">
+      <div class="timeline-meta">
+        <span class="timeline-date">2021 — 2022</span>
+      </div>
+      <div class="timeline-content">
+        <h3>Junior Software Engineer <span class="timeline-org">— Northlane Digital</span></h3>
+        <p>First engineering role out of school. Worked across an internal analytics dashboard, fixed a backlog of accessibility issues on the flagship product, and paired regularly with senior engineers to learn the codebase's testing culture.</p>
+        <ul class="timeline-tags">
+          <li>TypeScript</li><li>Accessibility</li><li>Testing</li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ LEARNING ============ -->
+<section class="learning" id="learning">
+  <div class="section-head">
+    <p class="eyebrow">Side quests &amp; training</p>
+    <h2>Studies, certifications, and things built for fun</h2>
+  </div>
+
+  <div class="learning-grid">
+    <div class="learning-col">
+      <h3>Education</h3>
+      <ul class="learning-list">
+        <li>
+          <span class="learning-title">B.Sc. Computer Science</span>
+          <span class="learning-sub">University of British Columbia — 2021</span>
+          <span class="learning-desc">Focused electives in graphics programming and human-computer interaction. Senior capstone: a physics-based cloth simulation renderer in OpenGL.</span>
+        </li>
+        <li>
+          <span class="learning-title">Game Design &amp; Development, Certificate</span>
+          <span class="learning-sub">Vancouver Film School — 2019</span>
+          <span class="learning-desc">Team-based game production sprint culminating in a shipped student title showcased at the school's public playtest night.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="learning-col">
+      <h3>Certifications</h3>
+      <ul class="learning-list">
+        <li>
+          <span class="learning-title">Unity Certified Programmer</span>
+          <span class="learning-sub">Unity Technologies — 2023</span>
+        </li>
+        <li>
+          <span class="learning-title">AWS Certified Developer — Associate</span>
+          <span class="learning-sub">Amazon Web Services — 2023</span>
+        </li>
+        <li>
+          <span class="learning-title">Advanced GDScript &amp; Godot Architecture</span>
+          <span class="learning-sub">GDQuest — 2022</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="learning-col">
+      <h3>Side projects</h3>
+      <ul class="learning-list">
+        <li>
+          <span class="learning-title">Ludum Dare 56 — "Undertow"</span>
+          <span class="learning-sub">48-hour solo game jam entry, ranked top 12% overall</span>
+          <span class="learning-desc">A one-button game about rowing against a current that only moves when you don't.</span>
+        </li>
+        <li>
+          <span class="learning-title">tilekit</span>
+          <span class="learning-sub">Open-source tilemap editor plugin, 300+ GitHub stars</span>
+          <span class="learning-desc">A small Godot addon for painting collision shapes directly onto autotiles, built because I kept needing it.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="section-head">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Have a project, a role, or just a question?</h2>
+    <p class="section-lede">Fill this in and I'll get back to you within a couple of days. This form validates on the client only — wire it to your own backend or a service like Formspree before it can actually send mail (see the comment at the top of script.js).</p>
+  </div>
+
+  <div class="contact-grid">
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+        <span class="form-error" id="name-error" role="alert"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <span class="form-error" id="email-error" role="alert"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="project-type">What's this about?</label>
+        <select id="project-type" name="project-type" required>
+          <option value="" disabled selected>Choose one</option>
+          <option value="game-dev">Game development</option>
+          <option value="web-dev">Web development</option>
+          <option value="collaboration">Collaboration / co-op project</option>
+          <option value="job">Job opportunity</option>
+          <option value="other">Something else</option>
+        </select>
+        <span class="form-error" id="project-type-error" role="alert"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+        <span class="form-error" id="message-error" role="alert"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit">
+        <span class="btn-label">Send message</span>
+      </button>
+
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="contact-side">
+      <div class="console-mini" aria-hidden="true">
+        <p><span class="prompt">&gt;</span> response_time&nbsp;&nbsp;<span class="value">~2 days</span></p>
+        <p><span class="prompt">&gt;</span> open_to&nbsp;&nbsp;<span class="value">freelance, full-time, jams</span></p>
+        <p><span class="prompt">&gt;</span> based_in&nbsp;&nbsp;<span class="value">Vancouver, BC (remote-friendly)</span></p>
+      </div>
+      <ul class="contact-side-links">
+        <li><a href="mailto:felipegarciadev@outlook.com">felipegarciadev@outlook.com</a></li>
+        <li><a href="https://github.com/felipegarcia10" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://yourusername.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="wordmark">Felipe Garcia<span class="wordmark-dot">.</span></a>
+      <p>Hybrid game &amp; web developer, based in Vancouver, BC.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#learning">Learning</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <ul class="footer-social">
+      <li><a href="https://github.com/felipegarcia10" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://yourusername.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+      <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:felipegarciadev@outlook.com">Email</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Felipe Garcia. Built with plain HTML, CSS, and JavaScript.</p>
+    <button class="back-to-top" id="back-to-top">Back to top ↑</button>
+  </div>
+</footer>
+
+<!-- ============ MEDIA MODAL ============ -->
+<div class="media-modal" id="media-modal" aria-hidden="true">
+  <div class="media-modal-inner" role="dialog" aria-modal="true" aria-labelledby="media-modal-caption">
+    <button class="media-modal-close" id="media-modal-close" aria-label="Close preview">&times;</button>
+    <div class="media-modal-frame">
+      <span class="media-kind" id="media-modal-kind">IMAGE</span>
+      <span class="media-hint" id="media-modal-hint"></span>
+    </div>
+    <p class="media-modal-caption" id="media-modal-caption"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
