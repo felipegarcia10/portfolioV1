@@ -273,15 +273,89 @@ input, textarea, select{ font: inherit; color: inherit; }
 .reveal.is-visible{ opacity: 1; transform: none; }
 
 /* =============================================================
-   PROJECTS
+   PROJECTS — card grid
    ============================================================= */
-.project{
+.project-cards{
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem) var(--edge);
-  border-top: 1px solid var(--line);
+  padding: 0 var(--edge);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
-.project:first-of-type{ border-top: none; }
+.project-card{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: var(--paper-alt);
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
+}
+.project-card:hover, .project-card:focus-visible{
+  transform: translateY(-4px);
+  border-color: var(--ink);
+  box-shadow: 6px 6px 0 var(--gold);
+}
+.project-card-thumb{
+  aspect-ratio: 16/9;
+  background: repeating-linear-gradient(135deg, var(--paper-deep), var(--paper-deep) 10px, var(--paper-alt) 10px, var(--paper-alt) 20px);
+  border-bottom: 1.5px solid var(--line);
+  display:flex; flex-direction: column; align-items:center; justify-content:center; gap:.4rem;
+}
+.project-card-body{ padding: 1.3rem 1.3rem .5rem; flex: 1; }
+.project-card-body .project-tagline{ font-size: .92rem; margin-bottom: 1rem; }
+.project-card-body h3{ font-size: 1.3rem; margin: .5rem 0 .5rem; }
+.project-card-tags{ display:flex; flex-wrap:wrap; gap: .5rem; }
+.project-card-tags li{
+  font-family: var(--font-mono); font-size: .7rem;
+  background: var(--paper); border: 1px solid var(--line);
+  padding: .22rem .55rem; border-radius: 100px; color: var(--ink-soft);
+}
+.project-card-cta{
+  display:flex; align-items:center; gap: .4rem;
+  font-family: var(--font-mono); font-size: .8rem; font-weight: 500;
+  color: var(--teal-deep);
+  padding: 1rem 1.3rem 1.3rem;
+  margin-top: auto;
+}
+.project-card-cta span{ transition: transform .18s var(--ease); }
+.project-card:hover .project-card-cta span,
+.project-card:focus-visible .project-card-cta span{ transform: translateX(4px); }
+
+/* =============================================================
+   PROJECT DETAIL OVERLAY
+   (content below is shared by the templates + overlay body)
+   ============================================================= */
+.project-overlay{
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(30,36,32,0.82);
+  display:flex; justify-content:center;
+  padding: clamp(1rem, 4vw, 3.5rem) var(--edge);
+  overflow-y: auto;
+  opacity: 0; pointer-events: none;
+  transition: opacity .22s var(--ease);
+}
+.project-overlay.is-open{ opacity: 1; pointer-events: auto; }
+.project-overlay-inner{
+  background: var(--paper);
+  border-radius: 8px;
+  max-width: 900px;
+  width: 100%;
+  height: fit-content;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  position: relative;
+  transform: translateY(16px);
+  transition: transform .22s var(--ease);
+}
+.project-overlay.is-open .project-overlay-inner{ transform: translateY(0); }
+.project-overlay-close{
+  position: sticky; top: 0; float: right;
+  font-size: 1.8rem; line-height: 1; color: var(--ink-soft);
+  margin-bottom: -2rem;
+}
+.project-overlay-close:hover{ color: var(--ink); }
 
 .project-title-row{ display:flex; align-items:center; gap: .8rem; margin-bottom: .8rem; }
 .build-tag{
@@ -296,7 +370,7 @@ input, textarea, select{ font: inherit; color: inherit; }
 .status-shipped{ background: rgba(31,111,99,0.14); color: var(--teal-deep); }
 .status-indev{ background: rgba(201,138,43,0.16); color: var(--gold-deep); }
 
-.project-head h3{ font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin-bottom: .5rem; }
+.project-overlay-body h3{ font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin-bottom: .5rem; }
 .project-tagline{ color: var(--ink-soft); font-size: 1.02rem; max-width: 58ch; margin-bottom: 1.4rem; }
 
 .project-meta{
@@ -512,7 +586,7 @@ input, textarea, select{ font: inherit; color: inherit; }
    MEDIA MODAL
    ============================================================= */
 .media-modal{
-  position: fixed; inset:0; z-index: 200;
+  position: fixed; inset:0; z-index: 400;
   display:flex; align-items:center; justify-content:center;
   background: rgba(30,36,32,0.82);
   opacity: 0; pointer-events: none;
@@ -545,6 +619,7 @@ input, textarea, select{ font: inherit; color: inherit; }
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; }
   .hero-console{ order: -1; }
+  .project-cards{ grid-template-columns: repeat(2, 1fr); }
   .project-meta{ grid-template-columns: repeat(2, 1fr); }
   .project-case{ grid-template-columns: 1fr; }
   .learning-grid{ grid-template-columns: 1fr; gap: 3rem; }
@@ -562,9 +637,11 @@ input, textarea, select{ font: inherit; color: inherit; }
   .main-nav.is-open{ display:flex; }
   .nav-toggle{ display:flex; }
   .version-tag{ display:none; }
+  .project-cards{ grid-template-columns: 1fr; }
   .timeline-entry{ grid-template-columns: 1fr; gap: .5rem; }
   .media-slot{ grid-column: span 4; }
   .media-tall{ grid-row: span 1; aspect-ratio: 16/10; }
+  .project-overlay{ padding: 1rem; }
   .footer-inner{ grid-template-columns: 1fr; }
   .footer-bottom{ flex-direction: column; align-items:flex-start; }
 }

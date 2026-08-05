@@ -26,6 +26,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initScrollReveal();
+  initProjectOverlay();
   initMediaModal();
   initContactForm();
   initFooterYear();
@@ -54,7 +55,7 @@ function initNav(){
 /* ---------- Scroll reveal ---------- */
 function initScrollReveal(){
   const targets = document.querySelectorAll(
-    '.project, .timeline-entry, .learning-col, .section-head'
+    '.project-card, .timeline-entry, .learning-col, .section-head'
   );
   targets.forEach(el => el.classList.add('reveal'));
 
@@ -75,7 +76,58 @@ function initScrollReveal(){
   targets.forEach(el => observer.observe(el));
 }
 
-/* ---------- Media modal (click a placeholder to preview it larger) ---------- */
+/* ---------- Project cards -> detail overlay ----------
+   Each card has data-project="slug"; the matching #tpl-slug
+   <template> is cloned into the overlay body on click. This keeps
+   the card grid compact while giving every project its own
+   dedicated space for the full case study, media, and links. */
+function initProjectOverlay(){
+  const overlay = document.getElementById('project-overlay');
+  const closeBtn = document.getElementById('project-overlay-close');
+  const body = document.getElementById('project-overlay-body');
+  if (!overlay || !body) return;
+
+  let lastFocused = null;
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const slug = card.dataset.project;
+      const template = document.getElementById(`tpl-${slug}`);
+      if (!template) return;
+
+      body.innerHTML = '';
+      body.appendChild(template.content.cloneNode(true));
+      body.scrollTop = 0;
+
+      lastFocused = card;
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      closeBtn.focus();
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeOverlay(){
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    body.innerHTML = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  closeBtn.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeOverlay();
+  });
+}
+
+/* ---------- Media modal (click a placeholder to preview it larger) ----------
+   Uses event delegation on document because most .media-slot elements
+   live inside templates that get cloned into the DOM on demand — they
+   don't exist yet at DOMContentLoaded. */
 function initMediaModal(){
   const modal = document.getElementById('media-modal');
   const closeBtn = document.getElementById('media-modal-close');
@@ -86,28 +138,27 @@ function initMediaModal(){
 
   let lastFocused = null;
 
-  document.querySelectorAll('.media-slot').forEach(slot => {
-    slot.addEventListener('click', () => {
-      const kind = slot.querySelector('.media-kind')?.textContent || '';
-      const hint = slot.querySelector('.media-hint')?.textContent || '';
-      const caption = slot.dataset.caption || '';
+  document.addEventListener('click', (e) => {
+    const slot = e.target.closest('.media-slot');
+    if (!slot) return;
 
-      kindEl.textContent = kind;
-      hintEl.textContent = hint;
-      captionEl.textContent = caption;
+    const kind = slot.querySelector('.media-kind')?.textContent || '';
+    const hint = slot.querySelector('.media-hint')?.textContent || '';
+    const caption = slot.dataset.caption || '';
 
-      lastFocused = document.activeElement;
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      closeBtn.focus();
-      document.body.style.overflow = 'hidden';
-    });
+    kindEl.textContent = kind;
+    hintEl.textContent = hint;
+    captionEl.textContent = caption;
+
+    lastFocused = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    closeBtn.focus();
   });
 
   function closeModal(){
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
     if (lastFocused) lastFocused.focus();
   }
 
